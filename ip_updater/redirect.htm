@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="shortcut icon" type="image/png" href="/favicon.png" />
+<title>Redirect</title>
+<style>
+body { font-size:48px; }
+</style>
+</head>
+<body>
+Current server IP address is:
+<div id="ipVal"></div>
+<script>
+var xhr = new XMLHttpRequest();
+xhr.onreadystatechange = function() {
+  if(this.readyState == 4 && this.status == 200) {
+    var ip = this.responseText;
+    document.getElementById('ipVal').innerHTML = 'http://'+ip+'/';
+    create_addr(ip);
+  }
+};
+xhr.open("GET","my_current_external_ip.txt",true);
+xhr.send();
+
+function create_addr(ip) {
+  addr = 'http://'+ip+'/';
+    setTimeout(function() {
+    window.location = addr;
+    },2000)
+}
+
+</script>
+Redirecting...
+</body>
+</html>
