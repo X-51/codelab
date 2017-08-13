@@ -1,39 +1,4 @@
-﻿<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pl">
-<head>
-<title>MySQL database - filelist</title>
-<link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700' rel='stylesheet' type='text/css' />
-<style>
-  .clicked {
-    font-weight:bold;}
-  .loading {
-    position:fixed;right:40%;top:100px;border:1px solid black;padding:20px}
-  .hidden {
-    visibility: hidden;}
-  .shown {}
-  p {
-    padding:0;margin:0;}
-  a {
-  line-height: 1;
-  font-family: 'PT Sans Narrow', sans-serif;
-  font-size:25px;
-  /*text-decoration:none;*/
-  color:black;}
-  body {
-  line-height: 1;
-  font-family: 'PT Sans Narrow', sans-serif;
-  font-size:22px;
-  background:white;
-  background-image:url("bg.png");
-  color:black;
-  margin-left:20%;}
-</style>
-</head>
-<body>
-
-
-<?php
+﻿<?php
 // nalezy ustawic dane logowania do bazy
 $host = 'localhost'; //host
 $db_user = 'root'; //nazwa uzytkownika
@@ -256,6 +221,3 @@ var href = this.href;
 window.setTimeout(function() { window.location.href = href} , 800)
 	}
 </script>
-<br />
-</body>
-</html>
