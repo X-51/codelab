@@ -172,9 +172,6 @@ echo ('<p><a href="'.basename(__FILE__).'?reset=true">/...</a></p>');
 //dirname(__FILE__); 			//folder path without file name;
 //echo '<br />Absolute script path is '.(__FILE__);
 ?>
-
-<div></div>
-
 <script>
 var a = document.getElementsByTagName('p');
 var l = a.length;
@@ -190,9 +187,7 @@ if (j>=l) {clearInterval(showLinks)}
 10
  //interval [ms]
 );
-</script>
 
-<script>
 var timeoutID;
 var text = " >>";
 var getLinks = document.getElementsByTagName('a');
