@@ -1,9 +1,9 @@
 <?php
 
-	if(!is_dir('email_log'))
-	{
-		mkdir('email_log', 0777);
-	}
+if(!is_dir('email_log'))
+{
+	mkdir('email_log', 0777);
+}
 
 $email = $_POST['email'];
 if (!filter_var($email, FILTER_VALIDATE_EMAIL))
@@ -37,12 +37,12 @@ else
 	fwrite($file,$addone);
 	fclose($file);
 
-		if ($addone > $max)
-		{
-			echo ("Unknown error. Contact with page administrator for more details.");
-			echo ("\n</body>");
-			die();
-		}
+	if ($addone > $max)
+	{
+		echo ("Unknown error. Contact with page administrator for more details.");
+		echo ("\n</body>");
+		die();
+	}
 
 	$name = $_POST['name'];
 	$message = $_POST['message'];
@@ -57,24 +57,24 @@ else
 	// Save IP number of email sender and log email to file in case of sending errors
 	function getUserIP()
 	{
-    $client  = @$_SERVER['HTTP_CLIENT_IP'];
-    $forward = @$_SERVER['HTTP_X_FORWARDED_FOR'];
-    $remote  = $_SERVER['REMOTE_ADDR'];
+		$client  = @$_SERVER['HTTP_CLIENT_IP'];
+		$forward = @$_SERVER['HTTP_X_FORWARDED_FOR'];
+		$remote  = $_SERVER['REMOTE_ADDR'];
 
-    if(filter_var($client, FILTER_VALIDATE_IP))
-    {
-        $ip = $client;
-    }
-    elseif(filter_var($forward, FILTER_VALIDATE_IP))
-    {
-        $ip = $forward;
-    }
-    else
-    {
-        $ip = $remote;
-    }
+		if(filter_var($client, FILTER_VALIDATE_IP))
+		{
+			$ip = $client;
+		}
+		elseif(filter_var($forward, FILTER_VALIDATE_IP))
+		{
+			$ip = $forward;
+		}
+		else
+		{
+			$ip = $remote;
+		}
 
-    return $ip;
+		return $ip;
 	}
 
 	$sender_ip = getUserIP(); // get sender's IP
