@@ -1,5 +1,5 @@
 function palindromeFinder(myNumber) {
-    myNumber+=0;
+    myNumber+=0; // get rid of leading zeros
     
     if(myNumber == undefined || myNumber < 0 || Number.isInteger(myNumber) == false) {
         console.log("Invalid data");
