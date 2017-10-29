@@ -9,7 +9,7 @@ function palindromeFinder(myNumber) {
     var init = myNumber+1;
     
     var initToStr = ""+init;
-    var strLength = initToStr.length;
+    //var strLength = initToStr.length;
     
     var arr = initToStr.split("");
     var arrLength = arr.length;
@@ -19,13 +19,13 @@ function palindromeFinder(myNumber) {
             if(arr[a]!==arr[arrLength-1-a]) {
                 myNumber+=1;
                 palindromeFinder(myNumber);  
-                break;                              
+                break;
             } 
             else if (a+1==arrLength)
             {
-               console.log('Your palindrome is '+init)
+               console.log('The closest palindrome greater than given number is '+init)
             }
         }
 }
 
-palindromeFinder(655346);
+palindromeFinder(8282);
